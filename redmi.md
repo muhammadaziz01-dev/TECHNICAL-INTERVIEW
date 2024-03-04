@@ -9,10 +9,10 @@
 8. String methods 
 9. Undefined vs null ?
 10. truthy , falthy ?
-11. conditional operator ?
 12. taqqoslash operatorlari 
+11. conditional operator ?
 13. o’zlashtirish operatorlari ? 
-14. ??  , &&  , ||**  
+14. ??  , &&  , ||   
 16. Dynamic elements ?
 17. callstack and heap ?
 18. array  ? 
@@ -62,7 +62,7 @@
 
 <meta name="description" content="Sahifa tavsifi"> // Sahifaning qisqa tavsifini o'z ichiga oladi va qidiruv natijalarida ko'rinadigan matnni ta'sir etadi.
 ```
-![Alt text](meta-tegi-html.png)
+![Alt text](imgs/meta-tegi-html.png)
 
 - Bu etiketlar, veb-sahifaning ko'rinuvchilik va foydalanuvchilar bilan muomala qilishini oshirish, qidiruv mashinalarining sahifani tushuntirishini ta'minlash va ijtimoiy tarmoqlarda ulanilganda ko'rinadigan ma'lumotlarni belgilash maqsadida ishlatiladi.
 
@@ -70,19 +70,19 @@
 
 ### 2. **pesudo class va pseudo element farqi?**
 
-![Alt text](pseudo-1.png)
+![Alt text](./imgs/pseudo-1.png)
 
 - Quydagi rasim orqali pesudo class va pseudo element farqini yaqqol ko'rishligimiz mumkun , yani stil berish jarayonida tanalab olgan elamentimizga ( :hover , :activ , :visited ) holatlari aynan psedo calss  va (::after , ::befor, ...) esa pseudo element .
 <hr>
 
 ### 3. **mixin vs extend farqi ?**
 
-![Alt text](Extend.png)
+![Alt text](imgs/Extend.png)
 
 - Extend scss da imkoniyatlaridan biri bo'lib bunda biz bironbir elamentimizga beriladigan qaytalanuvchi stillarni  (%) belgisi orqali extentimizga nom berib yozib olamiz va istalgan joyda extendimizni chaqirib ishlatishlik imkonini beradi , bu bir vaqitnig o'zida ham ishimizni engilashtiradi va codlarimizni kamaytiradi .
 
 
-![Alt text](mixin.png)
+![Alt text](./imgs/mixin.png)
 
 - Mixin vazifasi ham extendga o'xshash sintacsistibiroz farqli hudi funcsiyalarga qisman oxhshaib ketadi biz kiritgan qiymatlar ososida bizga stil yozib beradi , surat orqali buni yanada yahshiroq tushunishligimiz mumkun.
 
@@ -90,7 +90,7 @@
 
 ### 4. **javascript data types ?**
 
-![Alt text](js-data.jpg)
+![Alt text](./imgs/js-data.jpg)
 
 - JavaScripta asli data tayplar 8 ta va ular 2 ga bo'linadi primativ va no primativ , primativ turga faqat ozida bita qiymat saqlay oladigan typlar kiradi ular : string , number , undefiend , null , bool , bigint , symbol . No primativga esa o'zida birqancha qiymatlarni saqlay oladigan tiplar kiradi : Object.
 
@@ -98,7 +98,7 @@
 
 ### 5. **variables difference ?**
 
-![Alt text](variables.jpg)
+![Alt text](./imgs/variables.jpg)
 
 - JavaScript o'zgaruvchilari dasturlashda ma'lumotlarni saqlash va ular bilan ishlash uchun keng foydalaniladigan vositalardan biridir. O'zgaruvchilar yordamida ma'lumotlarni saqlash, qayta ishlatish, tuzatish va dastur boshqaruvini osonlashtiradi.
 
@@ -107,13 +107,13 @@
 2. - let - bloc scop , qayta qimatlashlik imkoni mavjud va vardan yana bir farqi qayta elon qilinmaydi yani letta birmarta elon qilingan ozgaruvchi nomini yana shu nom bilan elon qilinmaydi 
 3. - const - bloc scop , qayta qiymat tayinlanmaydi va qayta elon qilinmaydiham , bir so'z bilan aytganda o'zgarmas o'zgaruvchilarni const da elon qilinadi .
 
-![Alt text](vlc.png)
+![Alt text](./imgs/vlc.png)
 
 <hr>
 
 ### 6. **Number methods**
 
-![Alt text](number-methods.jpg)
+![Alt text](./imgs/number-methods.jpg)
 
 
 - JavaScript-da Number obyekti ichidagi bir nechta methodlar mavjud. Bu methodlar sonlar (numbers) bilan ishlashda yordam bermoqda. Quyidagi, ba'zi Number obyektining metodlari:
@@ -177,7 +177,7 @@ console.log(isFinite(son2));  // false
 
 ### 7. **Math object**
 
-![Alt text](math.jpg_large)
+![Alt text](imgs/math.jpg_large)
 
 - Math.abs  -> absalyut qiyamt chiqarishlik uchun
 - Math.fool -> kichik tamonga yahlitlash M: 12.4 -> 12 , 21.8 -> 21 
@@ -193,7 +193,7 @@ console.log(isFinite(son2));  // false
 
 ### 8. **String methods**
 
-![Alt text](string-methods.jpg)
+![Alt text](./imgs/string-methods.jpg)
 
 - **String length:** Matn uzunligini qaytaradi.
 
@@ -353,7 +353,7 @@ console.log(str.split(", ")); // ["Hello", "World!"]
 
 ### 9. **Undefined vs null**
 
-![Alt text](null-vs-undefined.webp)
+![Alt text](./imgs/null-vs-undefined.webp)
 
 - biz qanchonki ozgaruvchi elon qilsagu umga qiymat bermasak bu undefined bo'ladi agar unig bo'sh ekanligini aytsak yanig null qiyamat bersak u null bo'lasdi rasimda yaqol ko'rishligimiz mumkun .
 
@@ -368,8 +368,23 @@ console.log(titl) // => null
 
 ### 10. **truthy , falthy**
 
-![Alt text](falsy-truthy.png)
+![Alt text](imgs/falsy-truthy.png)
 
 - Folthy ( 0 , folse , "" , null , undefined , Nan , 0n )
 - Truth ( 1 , 1234 , 34343523n , "o" , '  ' , "folse" , true , infinit , -infinit , {} , [] , ...............)
 
+<hr>
+
+### 10. **conditional operator** 
+ 
+- if else , else if 
+- switch case 
+ ![Alt text](imgs/if-vs-switch.jpg)
+
+- ternary operator "('..'? ".." : "..")"
+![Alt text](imgs/teniri-operator.jpg)
+
+- nalish operator "null || undefind ?? "Yes";
+![Alt text](imgs/nullish-operator.webp)
+
+<hr>
