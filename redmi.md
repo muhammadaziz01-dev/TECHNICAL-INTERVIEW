@@ -375,7 +375,7 @@ console.log(titl) // => null
 
 <hr>
 
-### 10. **conditional operator** 
+### 11. **conditional operator** 
  
 - if else , else if 
 - switch case 
@@ -388,3 +388,36 @@ console.log(titl) // => null
 ![Alt text](imgs/nullish-operator.webp)
 
 <hr>
+
+### 12. **taqqoslash operatorlari**
+
+- ==, === , <= , >= , !== , != 
+
+![Alt text](imgs/taqoslash-operatorlari.png)
+
+<hr>
+
+### 13. **o’zlashtirish operatorlari**
+
+![Alt text](imgs/o'zlashtirish-operatorlari.png)
+
+<hr>
+
+### 14. **??  , &&  , ||**
+
+![Alt text](imgs/logicao-operator.webp)
+
+<hr>
+
+### 15. **Dynamic elements**
+
+- Dinamik elementlarni yaratish JavaScript-dan foydalangan holda DOM (Document Object Model) ga yangi HTML elementlarini qo'shish jarayonini anglatadi. Ushbu yondashuv ishlab chiquvchilarga ish vaqtida sahifa mazmunini yaratish va o'zgartirish uchun moslashuvchanlikni beradi, bu esa foydalanuvchi o'zaro ta'sirini va interfeysning sezgirligini oshiradi.
+
+<hr>
+
+### 16. **callstack and heap**
+
+
+
+
+
