@@ -403,7 +403,7 @@ console.log(titl) // => null
 
 <hr>
 
-### 14. **??  , &&  , ||**
+### 14. **!  , &&  , ||**
 
 ![Alt text](imgs/logicao-operator.webp)
 
@@ -417,7 +417,56 @@ console.log(titl) // => null
 
 ### 16. **callstack and heap**
 
+![Alt text](./imgs/Coll-Stack&&Heap.jpg)
 
+<hr>
 
+### 17. **array  ?**
 
+- JavaScript (JS) tilida massivlar (arrays) o'zgarmas, ko'p o'lchamli ma'lumotlarni boshqarish uchun foydalaniladi. Massivlar o'z ichiga bir nechta elementlarni saqlaydi va ularga indekslar orqali murojaat qilish mumkin. Massivlar "heap"da joylashadi va dinamik tarzda o'zgaruvchan yaratiladi. Quyidagi misol massiv yaratish va undan elementlarga murojaat qilishni namoyish etadi:
 
+```
+// Massiv yaratish
+let fruits = ['Apple', 'Banana', 'Orange', 'Mango'];
+
+// Massivdagi birinchi elementga murojaat qilish
+let firstFruit = fruits[0];
+console.log(firstFruit); // Natija: 'Apple'
+
+// Massivdagi elementlarni o'zgartirish
+fruits[1] = 'Grapes';
+
+// Massivdagi barcha elementlarni chiqarish
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+
+```
+
+-  Bu misolda, fruits nomli massiv yaratildi va undagi elementlarga indeks orqali murojaat qilindi. length xususiyati orqali massivning uzunligi aniqlanadi.
+
+- JavaScript massivlari har qanday turdagi ma'lumotlarni o'z ichiga oladigan ko'p o'lchamli ma'lumotlardir. Massivlar ustida ko'p turli amallar bajarilishi mumkin, masalan, yangi element qo'shish, elementni o'chirish, massivni qo'shish, massivni kesish va boshqalar.
+
+<hr>
+
+### 18. **function ?**
+
+- JavaScript (JS) tilidagi function so'zi funksiyalarni aniqlash va yaratish uchun ishlatiladi. Funksiya, delli bir vazifani bajarish uchun yozilgan JavaScript kod blokini ifodalaydi. Funksiya yaratilgandan so'ng, uni istalgan joyda chaqirish mumkin. function so'zi quyidagi ko'rinishda ishlatiladi:
+
+```
+function functionName(parameters) {
+    // Funksiya ichidagi kod bloki
+    // Bajariladigan vazifa
+    return result; // Agar kerak bo'lsa, natija qaytariladi
+}
+```
+
+- Bu yerda:
+
+  -  functionName: Funksiya nomi. Uni chaqirishda ushbu nomdan foydalaniladi.
+  -  parameters: Funksiyaga uzatiladigan o'zgaruvchilar (argumentlar) ro'yxati. Funksiyaga argument uzatilganda, ular funksiya ichidagi kod blokida ishlatiladi.
+  -  return: Natijani qaytarish uchun ishlatiladi. Funksiya biror narsa qaytarsa, uni qo'lda qaytaradi.
+
+<hr>
+
+### 19. **array methods (simple) ?**
