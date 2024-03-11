@@ -28,7 +28,7 @@
 29.  **.this** keyword 
 30. deep copy , shalow copy 
 31. Object creation types ?
-32. Factory function?
+32. Factory function?!!
 33. Generator function ?
 34. IIFE ?
 35. Currying function ?
@@ -470,3 +470,337 @@ function functionName(parameters) {
 <hr>
 
 ### 19. **array methods (simple) ?**
+
+![Alt text](./imgs/array-methods1.jpg)
+
+ - *Array -  bir vaqitning o'zida bir nechta qiymatlarni o'zida saqlashi mumkun bo'lgan obect. uni ikki hil ko'rinishda yaratishlik mumkun : 1- ko'rinishii va eng ko'p qo'lanadiga usul bu ( [ ] ) figurni qavuslar ichida yozishlik , 2- uslibi esa (new) kalit so'zidan foydalanib.* 
+
+<p>M :</p>
+
+```
+// 1- misol
+
+let arrayName = ['js' ,'java' , 'go'];
+
+// 2- misol
+
+let arrayName = new Array('js' ,'java' , 'go');
+
+```
+
+### Array'dan element olish
+- Array - elementlarini uning indexslaridan foydalanib oloshligimiz mumkun . Array  elementlarining raqamlari ( 0 ) - dan boshlanadi.
+
+<p>M :</p>
+
+```
+let arrayName = ['js' ,'java' , 'go'];
+console.log(arrayName[0]); // natija ==> js
+console.log(arrayName[2]); // natija ==> go
+```
+### Array'ga  element  qo'shish
+
+-  Array'ga  element  qo'shish uchun " push() " va " ushift() " metodlaridan foydalanishligimiz mumkun . Bunda   " push() " - metodi bizga massivnig ohiridan element qo'shin=b bersa " ushift() " meto'di esa aksincha boshidan element qo'shinb beradi , yaqshiroq tushunishlik uchun misol koramiz. 
+
+<p>M :</p>
+
+```
+// push() metodiga misol
+
+let name =  ['js' ,'java'];
+name.push('go');
+console.log(name); //natija =>  ['js' ,'java' , 'go']
+
+//unshift metodiga misol
+
+let name =  ['java' , 'go'];
+name.unshift('js');
+console.log(name); //natija =>  ['js' ,'java' , 'go']
+
+```
+
+### Array elemeni ozgartirish
+
+- Array elemeni ozgartirishlik uschun unig index'slaridan foydalansak bo'ladi.
+
+<p>M :</p>
+
+```
+let name =  ['js' ,'java' , 'go' ];
+console.log(name); //natija =>  ['js' ,'java' , 'go']
+name[1]='c++';
+console.log(name); //natija =>  ['js' ,'c++' , 'go']
+
+```
+
+### Array elementlarini o'chirish
+- Array - elementlarini o'chirishlik uchun "pop( )" va "shift( )"metodlaridan foydalansak bo'ladi , bubda  "pop( )" - metodi massiv ichidagi ohirgi elamentni o'chiradi va o'chirilgan elamentni ham qaytarish imkoni mavjuv bu metodda , "shift( )"- metodi massiv ichidagi boshidagi elamentni o'chiradi va o'chirilgan elamentni ham qaytarish imkoni mavjuv bu metodda.
+
+<p>M :</p>
+
+```
+// "pop()" metodi 
+
+const name = ['js' , 'java' , 'go' , 'c++' , 'c#'];
+const name2 = name.pop();
+console.log(name); // natija => ['js' , 'java' , 'go' , 'c++' ]
+console.log(name2); // natija => c#
+
+//----------------------------------------------------------
+
+//"shift()" metodi
+
+const name = ['js' , 'java' , 'go' , 'c++' , 'c#'];
+const name2 = name.shift();
+console.log(name); // natija => [ 'java' , 'go' , 'c++' , 'c#' ]
+console.log(name2); // natija => js
+```
+
+### Array uzunligini aniqlash
+
+- Array uzunligini yani uning ichidagi conini aniqlashlik uchun ( lenght ) - hususiyatidan foydalanamiz .
+
+<p>M :</p>
+
+```
+const name = ['js' , 'java' , 'go' , 'c++' , 'c#'];
+console.log(name.lenght); // natiga ==> 5
+```
+
+
+### concat() Metod
+- concat() -metodi ikki yoki undan ortiq arraylarni bitlashtiridshlik uchun ishlatiladi . bu ularni birlashtiradi va natiga qaytaradi .
+
+<p>M :</p>
+
+```
+const array1 = [ 1, 4 ];
+const array2 = [ 2, 3, 7 , 9 ];
+const result = array1.concat(array2);
+console.log(result); // natija ==> [1, 4, 2, 3, 7, 9]
+```
+
+### indexOf() va lastIndexOf() Metodlari:
+- indexOf() belgilangan elementni birinchi marta qaysi indeksda ekanligini qaytaradi, lastIndexOf() esa oxirgi marta qaysi indeksda ekanligini.
+
+<p>M :</p>
+
+```
+let fruits = ["apple", "banana", "kiwi", "melon", "banana"];
+console.log(fruits.indexOf("banana")); // 1
+console.log(fruits.lastIndexOf("banana")); // 4
+```
+
+### find() metodi
+
+- find() - metodi birinchi bo'lib shart bajargan array elamentini qaytaradi , kopincha bu metod array ichida meto'd qaytarishlikda ishlatiladi.
+
+
+<p>M :</p>
+
+```
+const result = [1, 4, 2, 3, 7, 9 ];
+const findValue = (n) => n === 2 ;
+const findValue2= result.find(findValue);
+console.log(findValue2); // natiga  => 2 
+// agar shartga tushmasa undefaind qaytaradi misol uchun n === 5 korinishini kiritsak.
+```
+### splice(start, deleteCount, item1, ..., itemN) Metodi:
+
+- splice() metodi massivda belgilangan indeksdan boshlab ma'lum bir soni o'chiradi va/ya yangi element(lar)ni qo'shadi.
+
+<p>M :</p>
+
+```
+let fruits = ["apple", "banana", "orange", "grape"];
+fruits.splice(2, 1, "kiwi", "melon");
+console.log(fruits); // natija ==>  ["apple", "banana", "kiwi", "melon", "grape"]
+
+```
+### slice(start, end) Metodi:
+- slice() metodi massivning belgilangan oraliqni ko'chirib olish uchun ishlatiladi.
+
+
+<p>M :</p>
+
+```
+let fruits = ["apple", "banana", "kiwi", "melon", "grape"];
+let subArray = fruits.slice(1, 4);
+console.log(subArray); //natija ==> ["banana", "kiwi", "melon"]
+
+```
+### indexOf() va lastIndexOf() Metodlari:
+- indexOf() belgilangan elementni birinchi marta qaysi indeksda ekanligini qaytaradi, lastIndexOf() esa oxirgi marta qaysi indeksda ekanligini.
+
+
+<p>M :</p>
+
+```
+let fruits = ["apple", "banana", "kiwi", "melon", "banana"];
+console.log(fruits.indexOf("banana")); //natiga =>  1
+console.log(fruits.lastIndexOf("banana")); //natiga =>  4
+
+```
+
+### includes() Metodi:
+
+- includes() metodi massivda berilgan elementni qidiradi va mavjud bo'lsa true, aks holda false qaytaradi.
+
+<p>M :</p>
+
+```
+let fruits = ["apple", "banana", "kiwi", "melon"];
+console.log(fruits.includes("kiwi")); // true
+console.log(fruits.includes("grape")); // false
+```
+
+<hr>
+
+
+### 20. **pure , impure functons**
+
+![Alt text](./imgs/pure-impure.png)
+
+- **Pure function :** Tashqaridagi globol scoptegi hech narsaga tasir o'tqazmasa (mutatsiya qilmasa ozgaruvchilarni) bunday  funcsiya *Pure function* deb ataladi !
+
+<p>M :</p>
+
+```
+function create(a, b) {
+    return a + b;
+}
+
+create(11, 10);
+```
+- **Inpure function :**- Bu globol scoptegi narsalarga (o'zgaruvchilarga) ta'sir o'tkazsa , mutatsiya qilsa unda bunday funcsiya  *Inpure function*  deb ataladi.
+
+<p>M :</p>
+
+```
+let arr = [];
+
+function addElement(a) {
+    arr.push(a);
+    return arr;
+}
+
+addElement(21);
+```
+
+<hr>
+
+### 21. **HOF -> higher orderd functions**
+
+![Alt text](./imgs/HOF-fuc.png)
+
+- **HOF -> Higher order functions -> Yuqori darajaklik funcsiya**
+- *HOF* - funcsiya ichida funcsiya return qilinsa bunday funcsifa "HOF" funcsiya deb ataladi , yani bir funcsiyani ichida ikkinchi funcsiyani elon qilib uni o'sha birinchi funcsiyani ichida returin qilinisligiga aytiladi.
+```
+let a = "Hello World";
+
+function closure() {
+    // let a = "Goodbye World";
+
+    console.log(a);
+
+    function innerFunc() {
+        let a = "GOOD";
+        console.log(a);
+    }
+    innerFunc();
+}
+
+closure();
+```
+<hr>
+
+### 22. **spread and rest operator ?**
+
+![Alt text](./imgs/spread-rest.png)
+
+- **Spread Operator (...):**
+Spread operator massivni yoki boshqa iteratsiya qiluvchi obyektlarni (iterable objects) o'z ichiga oladi va ularni ajratib olib, boshqa obyektga joylab yuboradi.
+
+Massivlarda:
+
+```
+var arr1 = [1, 2, 3];
+var arr2 = [...arr1, 4, 5];
+
+// Natija: arr2 = [1, 2, 3, 4, 5], arr1 - o'zgarmaydi
+
+```
+
+Obyektlarda:
+
+```
+var obj1 = { a: 1, b: 2 };
+var obj2 = { ...obj1, c: 3 };
+
+// Natija: obj2 = { a: 1, b: 2, c: 3 }, obj1 - o'zgarmaydi
+
+```
+
+- **Rest Operator (...):**
+Rest operator esa, funksiyalarda argumentlar ketma-ketligini (variadic) qabul qilish uchun ishlatiladi. U, argumentlar ro'yxatining qolgan qismini o'z ichiga oladi.
+
+Funksiyalarda:
+
+```
+function sum(...numbers) {
+  return numbers.reduce((acc, num) => acc + num, 0);
+}
+
+// Natija: sum(1, 2, 3, 4) = 10
+```
+
+ Rest operator yordamida funksiyaga berilgan argumentlar massivga aylanadi.
+
+Bunday ko'rsatilgan misollar orqali, spread operator massivlarni yoki obyektlarni ajratib olib, rest operator esa funksiyalarda ko'p argumentlarni qabul qilish uchun ishlatiladi.
+
+<hr>
+
+### 23. **filter , map , forEach ?**
+
+![Alt text](./imgs/array-methods.png);
+
+- **filter()** metodi massivni filtratsiya qiladi va berilgan shartga mos keladigan barcha elementlarni yangi massivga joylaydi.
+
+```
+var numbers = [1, 2, 3, 4, 5, 6];
+
+var evenNumbers = numbers.filter(function(number) {
+  return number % 2 === 0;
+});
+
+// Natija: evenNumbers = [2, 4, 6], numbers - o'zgarmaydi
+```
+
+
+- **map()** metodi massivdagi har bir elementni belgilangan funktsiya bo'yicha qayta ishlaydi va yangi bir massiv yaratadi.
+
+```
+var numbers = [1, 2, 3, 4, 5];
+
+var squaredNumbers = numbers.map(function(number) {
+  return number * number;
+});
+
+// Natija: squaredNumbers = [1, 4, 9, 16, 25], numbers - o'zgarmaydi
+```
+
+- forEach() metodi massivdagi har bir elementni bir nechta qo'llanmalar uchun qayta ishlatadi.
+
+```
+var fruits = ['olma', 'banan', 'shaftoli'];
+
+fruits.forEach(function(fruit) {
+  console.log(fruit);
+});
+
+// Natija: console-da "olma", "banan", "shaftoli" chiqadi, fruits - o'zgarmaydi
+```
+
+- filter(), map(), va forEach() metodlari massivlarning har bir elementiga qo'llanma qilishda yordam beradi va kodni optimallashtirishga imkon beradi. Bu metodlar funksional dasturlash paradigmasiga mos keladigan, ochiqroq va oson kod yozishga imkoniyat yaratish uchun juda foydali bo'ladi.
+
+<hr>
