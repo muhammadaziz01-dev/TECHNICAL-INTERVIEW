@@ -804,3 +804,123 @@ fruits.forEach(function(fruit) {
 - filter(), map(), va forEach() metodlari massivlarning har bir elementiga qo'llanma qilishda yordam beradi va kodni optimallashtirishga imkon beradi. Bu metodlar funksional dasturlash paradigmasiga mos keladigan, ochiqroq va oson kod yozishga imkoniyat yaratish uchun juda foydali bo'ladi.
 
 <hr>
+
+### 24. **reduce qanday ishlaydi ?**
+
+![Alt text](./imgs/reduce.webp)
+
+```
+const sonlar = [1, 2, 3, 4, 5];
+
+// Yig'indini hisoblash
+const umumiy = sonlar.reduce((biriktiruvchi, joriyQiymat) => {
+  return biriktiruvchi + joriyQiymat;
+}, 0);
+
+console.log(umumiy); // Natija: 15
+```
+
+- Bu misolda reduce funktsiyasi, ro'yxatdagi elementlarni qo'shish uchun ishlatilgan. Uning birinchi argumenti funksiya, ikkinchi argumenti esa boshlang'ich qiymat (0)dir.
+
+Ushbu funktsiya, har bir turdagi qiymatlarni qo'shish, ko'paytirish yoki boshqa arifmetik amallarni bajarish uchun o'zgartirilishi mumkin. Ilova talablaringizga muvofiq sifatli funksiya yaratishingiz mumkin.
+
+<hr>
+
+### 25. **method nima  ?**
+
+![Alt text](./imgs/method.png)
+
+- js da hamma nara borib ohiri objectga taqaladi agar object ichida unig keyiga biz bironbir funcsiyani teglanb qoysak shu methodbo'ladi .
+
+```
+var myObject = {
+  name: "John",
+  age: 30,
+  sayHello: function() {
+    console.log("Salom, men " + this.name + ", " + this.age + " yoshdaman!");
+  }
+};
+
+myObject.sayHello(); // "Salom, men John, 30 yoshdaman!"
+```
+
+### 26. **“use strict” keyword ?**
+
+![Alt text](./imgs/use-strict.png)
+
+- "use strict" JavaScript dasturlash tilidagi xususiy bir qo'llanma (directive) bo'lib, u nazariy qoidalarga amal qilishni ta'minlaydi. Bu qo'llanma qo'shimcha xavfsizlik va kodni optimallashtirish uchun yozilgan kodni amal qilishda yordam beradi. Yani qisqa qilib aytganda js  oldingi versiyasidagi baglarni oldini oladi desak mubolaga bo'lmaydi.
+
+<hr>
+
+### 27. **".this" keyword**
+
+- JavaScript dasturlash tilida this kalit so'zi obyektlarni yoki funksiyalarni ishlatgan joy va vaqtda ma'lumotlarga murojaat qilish uchun ishlatiladi. this so'zi o'z navbatida ma'lum bir kontekst yaratadi.
+
+thisni o'rganish uchun ikki asosiy kontekst mavjud: obyekt va funksiya.
+
+ 1.  Obyekt Konteksti:
+- Agar this bir obyektning ichida ishlatilsa, u o'sha obyektga murojaat qiladi.
+
+```
+var person = {
+  name: "John",
+  age: 30,
+  sayHello: function() {
+    console.log("Salom, men " + this.name + ", " + this.age + " yoshdaman!");
+  }
+};
+
+person.sayHello(); // "Salom, men John, 30 yoshdaman!"
+```
+- sayHello funksiyasi ichida this obyektni bildiradi, shuning uchun this.name va this.age esa person obyekti ichidagi ma'lumotlarga murojaat qiladi.
+
+ 
+JavaScript dasturlash tilida this kalit so'zi obyektlarni yoki funksiyalarni ishlatgan joy va vaqtda ma'lumotlarga murojaat qilish uchun ishlatiladi. this so'zi o'z navbatida ma'lum bir kontekst yaratadi.
+
+thisni o'rganish uchun ikki asosiy kontekst mavjud: obyekt va funksiya.
+
+1. Obyekt Konteksti:
+Agar this bir obyektning ichida ishlatilsa, u o'sha obyektga murojaat qiladi.
+
+```
+javascript
+Copy code
+var person = {
+  name: "John",
+  age: 30,
+  sayHello: function() {
+    console.log("Salom, men " + this.name + ", " + this.age + " yoshdaman!");
+  }
+};
+```
+
+person.sayHello(); // "Salom, men John, 30 yoshdaman!"
+sayHello funksiyasi ichida this obyektni bildiradi, shuning uchun this.name va this.age esa person obyekti ichidagi ma'lumotlarga murojaat qiladi.
+
+2. Funksiya Konteksti:
+- Agar this o'zgaruvchisi bir funksiya ichida ishlatilsa, u o'sha funksiya qayerda chaqirilsa, o'sha joyga murojaat qiladi.
+
+```
+function sayHello() {
+  console.log("Salom, men " + this.name);
+}
+
+var person1 = {
+  name: "John",
+  speak: sayHello
+};
+
+var person2 = {
+  name: "Alice",
+  speak: sayHello
+};
+
+person1.speak(); // "Salom, men John"
+person2.speak(); // "Salom, men Alice"
+```
+-  Bu misolda sayHello funksiyasi person1 va person2 obyektlari ichida speak xususiyatiga murojaat qiladi. Shu bilan birga, this.name sayHello funksiyasining chaqirildigi obyektning nomiga mos keladi.
+
+<hr>
+
+### 28 **deep copy , shalow copy**
+Live Sass Compiler
